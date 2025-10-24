@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Perfil de Usuario — Público</title>
+  <meta name="description" content="Vista pública del perfil, muy parecida a la edición pero con una distribución ligeramente distinta." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../CSS/Perfiles/Perfil-publico/perfil-publico.css" />
+</head>
+<body>
+  
+  <div class="bg-scene" aria-hidden="true">
+    <span class="bubble" style="--i:0; --x:6%"></span>
+    <span class="bubble" style="--i:1; --x:16%"></span>
+    <span class="bubble" style="--i:2; --x:28%"></span>
+    <span class="bubble" style="--i:3; --x:40%"></span>
+    <span class="bubble" style="--i:4; --x:52%"></span>
+    <span class="bubble" style="--i:5; --x:64%"></span>
+    <span class="bubble" style="--i:6; --x:74%"></span>
+    <span class="bubble" style="--i:7; --x:82%"></span>
+    <span class="bubble" style="--i:8; --x:90%"></span>
+    <span class="bubble" style="--i:9; --x:12%"></span>
+    <span class="bubble" style="--i:10; --x:34%"></span>
+    <span class="bubble" style="--i:11; --x:58%"></span>
+  </div>
+
+  <main class="wrap">
+    <section class="card" aria-labelledby="titulo">
+      <h1 id="titulo">Perfil público</h1>
+
+      
+      <div class="card-grid public">
+        
+        <div class="col-left">
+          <div class="avatar-stack">
+            <img
+              class="avatar xl"
+              src="https://api.dicebear.com/7.x/thumbs/svg?seed=Perfil&backgroundColor=b6a6f2,ffc6d9&shapeColor=ffffff"
+              alt="Foto de perfil" />
+          </div>
+
+          <div class="identity">
+            <h2 class="name">Valeria Moon</h2>
+            <p class="handle">@valeria.m</p>
+            <p class="email"><a href="mailto:valeria@example.com">valeria@example.com</a></p>
+          </div>
+        </div>
+
+        
+        <div class="col-right">
+          <section class="panel about" aria-labelledby="sobre-mi">
+            <h2 id="sobre-mi">Sobre mí</h2>
+            <p>
+              Me inspiran las paletas pastel y los detalles tranquilos. Disfruto diseñar experiencias simples,
+              claras y con personalidad. Fan del café, el cine y las microinteracciones.
+            </p>
+          </section>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <a href="../Foro.html" class="btn-foro">Volver al Foro</a>
+      </div>
+    </section>
+  </main>
+
+<style>
+.btn-foro {
+  display: block;              
+  width: fit-content;          
+  margin: 20px auto;           
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #6c63ff, #4e9af1);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  transform: translateY(0);
+}
+
+.btn-foro:hover {
+  background: linear-gradient(135deg, #4e9af1, #6c63ff);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-foro:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+</style>
+
+
+  
+
+  <script>
+    (function(){
+      const urlParams = new URLSearchParams(window.location.search);
+      const userId = urlParams.get('id');
+
+      if (!userId) {
+        document.querySelector('.card').innerHTML = '<h1>Usuario no encontrado</h1>';
+        return;
+      }
+
+      async function loadUserProfile(){
+        try {
+          const response = await fetch(`https://serenity-backend-78rn.onrender.com/api/users/${userId}`);
+          const data = await response.json();
+
+          if (response.ok && data.user) {
+            const user = data.user;
+
+           
+            const avatar = document.querySelector('.avatar');
+            if (user.profile_image) {
+              avatar.src = user.profile_image;
+            } else {
+              avatar.src = `https://api.dicebear.com/7.x/thumbs/svg?seed=${user.username}&backgroundColor=b6a6f2,ffc6d9&shapeColor=ffffff`;
+            }
+
+           
+            document.querySelector('.name').textContent = user.username;
+            document.querySelector('.handle').textContent = `@${user.username.toLowerCase().replace(/\s+/g, '')}`;
+            document.querySelector('.email a').textContent = user.email;
+            document.querySelector('.email a').href = `mailto:${user.email}`;
+
+            
+            const aboutP = document.querySelector('.about p');
+            aboutP.textContent = user.about_me || 'Este usuario aún no ha escrito sobre sí mismo.';
+          } else {
+            document.querySelector('.card').innerHTML = '<h1>Usuario no encontrado</h1>';
+          }
+        } catch (error) {
+          console.error('Error loading user profile:', error);
+          document.querySelector('.card').innerHTML = '<h1>Error al cargar el perfil</h1>';
+        }
+      }
+
+      loadUserProfile();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+@layer base, rhythm, layout, components, default, overwrites;
+
+html {
+
+  scroll-snap-type: y mandatory;
+
+
+  timeline-scope: --section, --main, --site-header;
+}
+
+
+
+body,
+.content {
+  background-color: var(--color-background, black);
+
+}
+
+main {
+  view-timeline: --main;
+}
+
+.section {
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+
+  view-timeline: --section;
+
+
+  height: 100dvh;
+}
+
+.content {
+
+  overflow: hidden;
+  position: fixed;
+  inset: 0;
+
+
+  animation: horizontal-scroll ease-in-out both;
+  animation-timeline: --section;
+}
+
+
+
+.indicator::before {
+  animation: indicate linear both;
+  animation-timeline: --main;
+  animation-range: contain;
+}
+
+
+@keyframes indicate {
+  0% {
+    --color-indicator: var(--color-primary);
+    transform: translateY(0);
+  }
+
+  25% {
+    --color-indicator: var(--color-yellow);
+  }
+
+  50% {
+    --color-indicator: var(--color-secondary);
+  }
+
+  75% {
+    --color-indicator: var(--color-red);
+  }
+
+  100% {
+    --color-indicator: var(--color-purple);
+    transform: translateY(calc(var(--indicator-total-height) - var(--indicator-size)));
+  }
+}
+
+@keyframes horizontal-scroll {
+  0% {
+    transform: translate3d(100%, 0%, 0);
+  }
+
+  50% {
+    transform: none;
+  }
+
+  100% {
+    transform: translate3d(-100%, 0%, 0);
+  }
+}
+
+@media (max-height: 770px) {
+  html {
+    font-size: 86%;
+  }
+}
+
+@media (max-height: 600px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@layer base {
+  :root {
+    --color-primary: oklch(88% 0.07 330);  /* pastel pink */
+    --color-secondary: oklch(88% 0.06 240); /* pastel lavender */
+
+    @media (max-height: 770px) {
+      h2 {
+        font-size:  86%;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #282829;
+}
+
+#title {
+    width: min(90vw, 400px);
+    height: auto;
+    display: block;
+    margin: 16px auto;
+}
+
+#board {
+    width: 90vmin;
+    height: 90vmin;
+    max-width: 600px;
+    max-height: 600px;
+    background-color: rgb(117, 122, 128);
+    border: 10px solid #303131;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#board img {
+    box-sizing: border-box;
+    width: 33.3333%;
+    height: 33.3333%;
+    border: 1px solid #202020;
+    display: block;
+    object-fit: cover;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}

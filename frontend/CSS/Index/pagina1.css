@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cambay:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+html, body {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #F5F6F7;
+  overflow-x: hidden;
+  background-image: url("../../assets/img/Index/Fondo.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.bg-custom {
+  background-color: rgba(148, 157, 200, 0.5);
+}
+
+.navbar-brand {
+  font-size: 30px;
+  font-family: "Abril Fatface", serif;
+  color: #F5F6F7 !important;
+  text-decoration: none;
+}
+
+.navbar-brand img {
+  margin-right: 5px;
+}
+
+.navbar-nav .nav-link {
+  font-family: "Cambay", sans-serif;
+  font-size: 20px;
+  color: #F5F6F7 !important;
+}
+
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23f5f6f7' viewBox='0 0 30 30'%3e%3cpath stroke='%23f5f6f7' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+.titulo_1, .titulo_2, .titulo3 {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.titulo {
+  font-size: 80px;
+  font-family: "Abril Fatface", serif;
+  text-align: center;
+}
+
+.titulo2 {
+  font-size: 30px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.titulo_3 {
+  font-size: 20px;
+}
+
+.titulo3 a {
+  color: #F5F6F7;
+  text-decoration: underline;
+}
+
+.conten_button {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.botoncito {
+  height: 50px;
+  width: 225px;
+  font-size: 25px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  border: none;
+  border-radius: 30px;
+  background-color: rgba(107, 117, 167, 0.5);
+  color: #F5F6F7;
+}
+
+
+
+/*  Tablet (768px - 1023px) */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .titulo {
+    font-size: 60px;
+  }
+
+  .titulo2 {
+    font-size: 24px;
+  }
+
+  .botoncito {
+    width: 200px;
+    font-size: 20px;
+  }
+}
+
+/* Tablet pequeña (600px - 767px) */
+@media screen and (max-width: 767px) and (min-width: 600px) {
+  .titulo {
+    font-size: 45px;
+  }
+
+  .titulo2 {
+    font-size: 20px;
+  }
+
+  .botoncito {
+    width: 180px;
+    font-size: 18px;
+  }
+}
+
+/*  Celulares (menos de 599px) */
+@media screen and (max-width: 599px) {
+  .titulo {
+    font-size: 35px;
+  }
+
+  .titulo2 {
+    font-size: 18px;
+  }
+
+  .botoncito {
+    width: 160px;
+    font-size: 16px;
+  }
+
+  .navbar-brand {
+    font-size: 24px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+  }
+}
+
+/*  Teléfonos muy pequeños */
+@media screen and (max-width: 400px) {
+  .titulo {
+    font-size: 28px;
+  }
+
+  .titulo2 {
+    font-size: 16px;
+  }
+
+  .botoncito {
+    width: 140px;
+    font-size: 14px;
+  }
+
+  .titulo_3 {
+    font-size: 14px;
+  }
+}
+
+

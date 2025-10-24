@@ -1,0 +1,549 @@
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v23/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wlxdr.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v23/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdr.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v23/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v23/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdr.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v23/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdr.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v23/6xKydSBYKcSV-LCoeQqfX1RYOo3iu4nwlxdr.ttf) format('truetype');
+}
+body {
+  
+  background: linear-gradient(rgba(148, 157, 200, 0.85), rgba(192, 170, 221, 0.9)), url('https://i.pinimg.com/1200x/57/00/0e/57000e1be32148b68d66f29ccddcdc8a.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #5b5b5b;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+a.btn {
+  background: #949dc8;
+  border-radius: 4px;
+  box-shadow: 0 2px 0px 0 rgba(140, 82, 255, 0.4);
+  color: #ffffff;
+  display: inline-block;
+  padding: 6px 30px 8px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.1s 0s ease-out;
+}
+.no-touch a.btn:hover {
+  background: #8796db;
+  box-shadow: 0px 8px 2px 0 rgba(140, 82, 255, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.25s 0s ease-out;
+}
+.no-touch a.btn:active,
+a.btn:active {
+  background: #bcabd1;
+  box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.35);
+  transform: translate3d(0, 1px, 0);
+  transition: all 0.025s 0s ease-out;
+}
+div.cards {
+  margin: 80px auto;
+  max-width: 960px;
+  text-align: center;
+}
+div.card {
+  background: #ffffff;
+  display: inline-block;
+  margin: 8px;
+  max-width: 300px;
+  perspective: 1000;
+  position: relative;
+  text-align: left;
+  transition: all 0.3s 0s ease-in;
+  width: 300px;
+  z-index: 1;
+}
+div.card img {
+  max-width: 100%;
+}
+div.card .card__image-holder {
+  background: rgba(140, 82, 255, 0.25);
+  height: 0;
+  padding-bottom: 75%;
+  position: relative;
+  overflow: hidden;
+}
+div.card .card__image-holder .card__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      
+  object-position: center; 
+  display: block;
+}
+div.card div.card-title {
+  background: #ffffff;
+  padding: 6px 15px 10px;
+  position: relative;
+  z-index: 0;
+}
+div.card div.card-title a.toggle-info {
+  border-radius: 32px;
+  height: 32px;
+  padding: 0;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  width: 32px;
+}
+div.card div.card-title a.toggle-info span {
+  background: #ffffff;
+  display: block;
+  height: 2px;
+  position: absolute;
+  top: 16px;
+  transition: all 0.15s 0s ease-out;
+  width: 12px;
+}
+div.card div.card-title a.toggle-info span.left {
+  right: 14px;
+  transform: rotate(45deg);
+}
+div.card div.card-title a.toggle-info span.right {
+  left: 14px;
+  transform: rotate(-45deg);
+}
+div.card div.card-title h2 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  margin: 0;
+  padding: 0;
+}
+div.card div.card-title h2 small {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+div.card div.card-description {
+  padding: 0 15px 10px;
+  position: relative;
+  font-size: 14px;
+}
+div.card div.card-actions {
+  box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.075);
+  padding: 10px 15px 20px;
+  text-align: center;
+}
+div.card div.card-flap {
+  background: #cdc1dd;
+  position: absolute;
+  width: 100%;
+  transform-origin: top;
+  transform: rotateX(-90deg);
+}
+div.card div.flap1 {
+  transition: all 0.3s 0.3s ease-out;
+  z-index: -1;
+}
+div.card div.flap2 {
+  transition: all 0.3s 0s ease-out;
+  z-index: -2;
+}
+div.cards.showing div.card {
+  cursor: pointer;
+  opacity: 0.6;
+  transform: scale(0.88);
+}
+.no-touch div.cards.showing div.card:hover {
+  opacity: 0.94;
+  transform: scale(0.92);
+}
+div.card.show {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+div.card.show div.card-title a.toggle-info {
+  background: #8c52ff !important;
+}
+div.card.show div.card-title a.toggle-info span {
+  top: 15px;
+}
+div.card.show div.card-title a.toggle-info span.left {
+  right: 10px;
+}
+div.card.show div.card-title a.toggle-info span.right {
+  left: 10px;
+}
+div.card.show div.card-flap {
+  background: #ffffff;
+  transform: rotateX(0deg);
+}
+div.card.show div.flap1 {
+  transition: all 0.3s 0s ease-out;
+}
+div.card.show div.flap2 {
+  transition: all 0.3s 0.2s ease-out;
+}
+
+.top-right-login {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 1000;
+}
+.btn-login {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(180deg, #949dc8, #8c52ff);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(140, 82, 255, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn-login:hover {
+  background: #8796db;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 2px rgba(140, 82, 255, 0.2);
+}
+.btn-login:active {
+  background: #bcabd1;
+  transform: translateY(0);
+}
+
+.top-left-foro {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+}
+.btn-foro {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(180deg, #949dc8, #8c52ff);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(140, 82, 255, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn-foro:hover {
+  background: #8796db;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 2px rgba(140, 82, 255, 0.2);
+}
+.btn-foro:active {
+  background: #bcabd1;
+  transform: translateY(0);
+}
+
+
+.fab-menu {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 1000;
+}
+.fab-button {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(180deg, #8c52ff, #8796db);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 12px 22px rgba(140, 82, 255, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  overflow: hidden;
+  padding: 0;
+}
+.fab-button:hover {
+  background: #8796db;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 16px rgba(140, 82, 255, 0.25);
+}
+.fab-button:active {
+  background: #bcabd1;
+  transform: translateY(0);
+}
+
+
+.quick-panel {
+  position: absolute;
+  left: 0;
+  right: auto;
+  bottom: 72px; 
+  width: 260px;
+  padding: 14px;
+  opacity: 0;
+  transform: translateY(10px) scale(0.98);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.fab-menu.open .quick-panel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.quick-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.quick-panel a {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   width: 100%;
+   padding: 10px 12px;
+   border-radius: 10px;
+   color: #000000 !important;
+   text-decoration: none;
+   background: linear-gradient(180deg, #ffffff, #cdc1dd);
+   border: 1px solid rgba(140, 82, 255, 0.25);
+   transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+   font-weight: 600;
+}
+.quick-panel a:hover {
+   background: linear-gradient(180deg, #f0f0f0, #e0e0e0);
+   color: #000000;
+   transform: translateX(2px);
+   box-shadow: 0 6px 12px rgba(140, 82, 255, 0.18);
+}
+.quick-panel a:active {
+  background: #c0aadd;
+  transform: translateX(1px);
+}
+
+
+.quick-panel a .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #8c52ff, #8796db);
+  color: #ffffff;
+  flex: 0 0 28px;
+  box-shadow: 0 2px 6px rgba(140, 82, 255, 0.25);
+}
+.quick-panel a .icon img,
+.quick-panel a .icon svg {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+}
+.quick-panel a:hover .icon {
+  background: linear-gradient(180deg, #8796db, #bcabd1);
+}
+
+
+.fab-button .fab-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+  display: block;
+  border-radius: 50%; 
+}
+.fab-button svg {
+  width: 26px;
+  height: 26px;
+}
+.btn-login svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+.fab-menu.open .fab-button {
+  transform: rotate(45deg) scale(1.05);
+  box-shadow: 0 14px 24px rgba(140, 82, 255, 0.32);
+}
+
+
+.quick-panel ul li {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.fab-menu.open .quick-panel ul li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fab-menu.open .quick-panel ul li:nth-child(1) { transition-delay: 0.02s; }
+.fab-menu.open .quick-panel ul li:nth-child(2) { transition-delay: 0.06s; }
+.fab-menu.open .quick-panel ul li:nth-child(3) { transition-delay: 0.10s; }
+.fab-menu.open .quick-panel ul li:nth-child(4) { transition-delay: 0.14s; }
+.fab-menu.open .quick-panel ul li:nth-child(5) { transition-delay: 0.18s; }
+.fab-menu.open .quick-panel ul li:nth-child(6) { transition-delay: 0.22s; }
+
+
+.quick-panel a .text {
+  flex: 1 1 auto;
+  font-size: 15px;
+  letter-spacing: 0.2px;
+}
+
+
+.fab-button:focus-visible,
+.btn-login:focus-visible,
+.quick-panel a:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(140, 82, 255, 0.45),
+    0 0 0 6px rgba(255, 255, 255, 0.9);
+}
+
+
+.quick-panel a:active {
+  filter: brightness(0.98);
+}
+
+
+@media (max-width: 480px) {
+  .btn-login {
+    padding: 12px 18px;
+    font-size: 15px;
+  }
+  .quick-panel {
+    width: 88vw;
+    left: 0;
+    right: auto;
+  }
+}
+
+.btn-login .login-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+.btn-foro .foro-logo {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.fab-button .fab-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+.quick-panel a .icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+.fab-button .icon-logo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+}
+
+.psicologia-card {
+  background: #e2d9f3;
+  border: 2px solid #8c52ff;
+  box-shadow: 0 4px 8px rgba(140, 82, 255, 0.3);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.psicologia-card:hover {
+  transform: translateY(-5px) scale(1.22);
+  box-shadow: 0 8px 16px rgba(140, 82, 255, 0.4);
+}
+
+.psicologia-card .card__image-holder {
+  background: rgba(140, 82, 255, 0.5);
+}
+
+.psicologia-card .card-title {
+  background: linear-gradient(45deg, #ba68c8, #ab47bc, #ba68c8);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+.psicologia-card .btn {
+  background: #8c52ff;
+  box-shadow: 0 2px 0px 0 rgba(140, 82, 255, 0.4);
+}
+
+.no-touch .psicologia-card .btn:hover {
+  background: #7b46e3;
+  box-shadow: 0px 8px 2px 0 rgba(140, 82, 255, 0.2);
+}
+
+.psicologia-card .btn:active {
+  background: #6c42b8;
+  box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.35);
+}
+
+.psicologia-card.show .card-title a.toggle-info {
+  background: linear-gradient(to bottom, #f3e5f5, #e1bee7);
+}
+
+.psicologia-card .card-description {
+  background: linear-gradient(to bottom, #f3e5f5, #e1bee7);
+}
+
+.psicologia-card .card-actions {
+  background: linear-gradient(to bottom, #e1bee7, #ce93d8);
+}
+
+.psicologia-card.show .card-flap {
+  background: linear-gradient(to bottom, #f3e5f5, #e1bee7);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

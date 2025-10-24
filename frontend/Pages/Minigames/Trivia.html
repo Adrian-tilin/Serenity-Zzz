@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación de Bienestar Mental</title>
+    <link rel="stylesheet" href="../../CSS/Minigames/Trivia/Trivia.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Evaluación de Bienestar Mental</h1>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+                <span class="progress-text" id="progress-text">Pregunta 1 de 30</span>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <div class="question-card" id="question-card">
+                <div class="question-header">
+                    <h2 id="question"></h2>
+                </div>
+                <div class="options-grid" id="options-grid">
+                    <!-- Options will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <div class="feedback-section" id="feedback-section">
+                <p id="feedback"></p>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-primary" id="next-btn" disabled>Siguiente</button>
+                <button class="btn btn-secondary" id="restart-btn" style="display: none;">Reiniciar</button>
+            </div>
+        </main>
+
+        <footer class="score-display">
+            <div class="score-item">
+                <span class="score-label">Puntuación Actual:</span>
+                <span class="score-value" id="current-score">0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">Preguntas Respondidas:</span>
+                <span class="score-value" id="questions-answered">0</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- FAB menu -->
+    <script src="../../JS/common/fab.js"></script>
+    <script src="../../JS/Minigames/Trivia/trivia.js"></script>
+</body>
+</html>

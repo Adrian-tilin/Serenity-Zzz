@@ -1,0 +1,472 @@
+@layer layout {
+  header,
+  main,
+  section,
+  article,
+  aside,
+  nav,
+  form,
+  div,
+  footer {
+    
+    --section-spacing-multiplier: 1;
+    --section-spacing: calc(var(--spacing, 1.5rem) * var(--section-spacing-multiplier));
+
+    @media (min-width: 40em) {
+      --section-spacing-multiplier: 2;
+    }
+
+    @media (min-width: 60em) {
+      --section-spacing-multiplier: 3;
+    }
+
+    @media (min-width: 80em) {
+      --section-spacing-multiplier: 4;
+    }
+
+    @media (min-width: 100em) {
+      --section-spacing-multiplier: 5;
+    }
+  }
+
+  header,
+  section,
+  footer {
+    
+    padding-inline: max(var(--section-spacing), calc(50% - var(--max-content-width, 100rem) / 2));
+  }
+
+  section {
+    padding-block: var(--section-spacing);
+  }
+}
+
+.site-header {
+  overflow: auto;
+  padding-block: calc(var(--spacing) / 2);
+  position: fixed;
+  inset-block-end: 0;
+  inset-inline: 0;
+  z-index: 10000;
+
+  @media (min-width: 64rem) {
+    display: flex;
+    inset-block-start: 0;
+    inset-block-end: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+
+@supports(animation-timeline: view()) {
+  .site-header::after {
+    content: none;
+    display: none;
+  }
+}
+
+.fieldset-wrapper {
+  --height: calc(var(--spacing) * 2);
+
+  border-radius: calc(var(--height) / 2);
+  overflow: auto;
+
+  
+  padding-inline: 1px;
+}
+
+fieldset {
+  --font-size-min: 14;
+  --font-size-max: 16;
+
+  /* Fondo pastel translúcido en lugar de negro */
+  background-color: hsla(330, 100%, 96%, 0.65);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid var(--color-ui);
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--spacing) / 2);
+  font-size: var(--font-size);
+  margin: 0;
+  padding: calc(var(--spacing) / 4) var(--spacing);
+  width: 100%;
+  flex-wrap: wrap;
+
+  @media (min-width: 64rem) {
+    margin: 0;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: var(--spacing);
+  }
+}
+
+.fieldset-wrapper fieldset a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: calc(var(--spacing) / 6) calc(var(--spacing) / 2);
+  border-radius: 999px;
+  position: relative;
+  transition: color .25s ease, background-color .25s ease;
+}
+
+.fieldset-wrapper fieldset a::after {
+  content: '';
+  position: absolute;
+  left: calc(var(--spacing) / 2);
+  right: calc(var(--spacing) / 2);
+  bottom: calc(var(--spacing) / 10);
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .25s ease;
+  opacity: .9;
+}
+
+.fieldset-wrapper fieldset a:hover,
+.fieldset-wrapper fieldset a:focus-visible {
+  background-color: color-mix(in oklab, var(--color-ui) 40%, transparent);
+}
+
+.fieldset-wrapper fieldset a:hover::after,
+.fieldset-wrapper fieldset a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+
+
+legend {
+  color: var(--color-secondary);
+}
+
+
+
+.sr-only {
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+}
+
+@media (min-width: 64rem) {
+  h1.sr-only {
+    --font-size-min: 14;
+    --font-size-max: 16;
+
+    all: unset;
+    color: var(--color-text);
+    font-family: var(--font-family-default);
+    font-size: var(--font-size);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    margin: 0;
+  }
+}
+
+nav {
+  --indicator-number: 5;
+  --indicator-top: 50dvb;
+  --indicator-right: var(--spacing);
+
+  --indicator-size: 1em;
+  --indicator-padding: calc((var(--min-tap-size) - var(--indicator-size)) / 2);
+  --indicator-clipped-margins: var(--indicator-padding) * 2;
+  --indicator-total-size: calc(var(--indicator-size) + var(--indicator-padding) * 2);
+
+  --indicator-gap: var(--min-tap-space);
+  --indicator-total-gap: calc(var(--indicator-gap) * (var(--indicator-number) - 1));
+
+  --indicator-total-height: calc(var(--indicator-total-size) * var(--indicator-number) + var(--indicator-total-gap) - var(--indicator-clipped-margins));
+
+  
+  @media (pointer: fine) {
+    --indicator-padding: 0.25em;
+  }
+
+  position: fixed;
+  inset-block-start: var(--indicator-top);
+  inset-inline-end: var(--indicator-right);
+  -webkit-margin-before: calc(var(--indicator-total-height) / -2);
+          margin-block-start: calc(var(--indicator-total-height) / -2);
+  z-index: 100;
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--indicator-gap);
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    &::before {
+      --size: calc(var(--indicator-size));
+
+      border-radius: 50%;
+      content: '';
+      color: var(--color-indicator, var(--color-text));
+      background-color: currentColor;
+      box-shadow: inset 0 0 0 4px color-mix(in oklab, var(--color-ui) 85%, transparent);
+      position: absolute;
+      inset-inline: 0;
+      margin-inline: auto;
+      padding: 3px;
+      width: var(--size);
+      height: var(--size);
+      z-index: -1;
+    }
+  }
+
+  & li:first-of-type {
+    -webkit-margin-before: calc(var(--indicator-padding) * -1);
+            margin-block-start: calc(var(--indicator-padding) * -1);
+  }
+
+  & li:last-of-type {
+    -webkit-margin-after: calc(var(--indicator-padding) * -1);
+            margin-block-end: calc(var(--indicator-padding) * -1);
+  }
+
+  & li,
+  & a {
+    display: block;
+  }
+
+  & a {
+    --color-link: var(--color-text);
+
+    padding: var(--indicator-padding);
+
+    &::before {
+      content: '';
+      border: 1px solid;
+      border-radius: 50%;
+      display: block;
+      width: var(--indicator-size);
+      height: var(--indicator-size);
+    }
+  }
+}
+
+@supports not (animation-timeline: scroll()) {
+  nav {
+    display: none;
+  }
+}
+
+footer {
+  --font-size-min: 14;
+  --font-size-max: 16;
+
+  color: var(--color-accent);
+  font-size: var(--font-size);
+  text-align: center;
+  position: relative;
+  z-index: 100;
+}
+
+.emoji {
+  background-color: var(--color-background);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-primary);
+    mix-blend-mode: hue;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block: var(--spacing);
+  padding-inline: inherit;
+  position: relative;
+  height: 100%;
+
+  @media (min-width: 64rem) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  & strong,
+  & code {
+    color: var(--color-highlight);
+  }
+
+  & code {
+    font-family: var(--font-family-default);
+  }
+
+  & .selector {
+    --color-property: var(--color-highlight);
+
+    color: var(--color-selector);
+    font-weight: 700;
+  }
+
+  & .property {
+    --color-property: var(--color-highlight);
+
+    color: var(--color-property);
+    font-weight: 700;
+  }
+
+  & ul {
+    --font-size-min: 14;
+    --font-size-max: 16;
+
+    font-size: var(--font-size);
+    font-weight: 400;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+  }
+
+  & li {
+    margin-bottom: calc(var(--spacing) / 2);
+
+    &::marker {
+      content: '🌷 ';
+      color: var(--color-highlight);
+    }
+  }
+}
+
+h2,
+.text {
+  
+  -webkit-padding-end: calc(var(--min-tap-size) + var(--spacing));
+          padding-inline-end: calc(var(--min-tap-size) + var(--spacing));
+
+  @media (min-width: 64rem) {
+    -webkit-padding-end: 0;
+            padding-inline-end: 0;
+  }
+}
+
+@supports not (animation-timeline: scroll()) {
+  h2,
+  .text {
+    -webkit-padding-end: 0;
+            padding-inline-end: 0;
+  }
+}
+
+h2 {
+  line-height: 1;
+  margin-block: var(--spacing);
+  text-shadow: 1px 2px 0.1em hsla(0, 0%, 0%, 0.5);
+  width: 100%;
+
+  @media (min-width: 64rem) {
+    flex: 1;
+    -webkit-margin-after: 0;
+            margin-block-end: 0;
+  }
+}
+
+.text {
+  --intrinsic-width: 587;
+  --intrinsic-height: 930;
+  --height: 200px;
+  --offset: 200px;
+
+  & img {
+    display: block;
+    opacity: 0.2;
+    position: absolute;
+    inset: 0;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: top center;
+       object-position: top center;
+    z-index: -1;
+  }
+
+  @media (min-width: 64rem) {
+    --height: min(100dvb, 33vw * var(--intrinsic-height) / var(--intrinsic-width));
+    --offset: calc(var(--height) / 3);
+
+    flex: 1;
+    font-weight: 200;
+    -webkit-padding-before: var(--spacing);
+            padding-block-start: var(--spacing);
+    position: relative;
+    z-index: -1;
+
+    & img {
+      float: inline-start;
+      height: var(--height);
+      margin-left: calc((1 - var(--intrinsic-width) / var(--intrinsic-height)) * -100%);
+      opacity: 0.65;
+      position: relative;
+      inset: auto;
+      shape-outside: var(--image);
+      shape-margin: var(--spacing);
+
+      & + * {
+        margin-top: calc(var(--spacing) * 3);
+      }
+    }
+  }
+
+  @media (min-width: 64rem) and (min-height: 45rem) {
+    & img + * {
+      margin-top: calc(var(--spacing) * 4);
+    }
+  }
+
+  @media (min-width: 90rem) and (min-height: 35rem) {
+    & img + * {
+      margin-top: var(--offset);
+    }
+  }
+}
+
+section:nth-child(1) {
+  --color-highlight: var(--color-primary);
+  --color-selector: var(--color-secondary);
+  --image: url('https://assets.codepen.io/197359/flower-white.png');
+}
+
+section:nth-child(2) {
+  --color-highlight: var(--color-yellow);
+  --color-selector: var(--color-green);
+  --image: url('https://assets.codepen.io/197359/flower-yellow.png');
+  --margin-top: 10dvi;
+}
+
+section:nth-child(3) {
+  --color-highlight: var(--color-secondary);
+  --color-selector: var(--color-primary);
+  --image: url('https://assets.codepen.io/197359/flower-blue.png');
+}
+
+section:nth-child(4) {
+  --color-highlight: var(--color-red);
+  --color-selector: var(--color-green-2);
+  --image: url('https://assets.codepen.io/197359/flower-red.png');
+}
+
+section:nth-child(5) {
+  --color-highlight: var(--color-purple);
+  --color-selector: var(--color-red-2);
+  --image: url('https://assets.codepen.io/197359/flower-purple.png');
+  --margin-top: 10dvi;
+}
+

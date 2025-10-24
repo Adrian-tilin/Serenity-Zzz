@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../CSS/Minigames/gato-laberinto/Gtlb.css">
+    <title>laberinto En el mar</title>
+</head>
+
+<body>
+    <div id="gradient"></div>
+    <div id="page">
+
+        <!-- Overlay de inicio / inactividad -->
+        <div id="idle-overlay" class="overlay">
+            <div class="overlay-message">
+                <h2>Eres un valiente pulpo en busca de su Princesa sirena, búscala para salvarla</h2>
+                <p>Debes buscar a la Princesa sirena. Muévete con las flechas o tocando las flechas en pantalla para llegar a donde ella.</p>
+                <button id="idle-ok">Entendido</button>
+            </div>
+        </div>
+
+        <div id="Message-Container">
+            <div id="message">
+                <h1>¡Felicidades!</h1>
+                <p>Has completado el laberinto y salvado a la Princesa</p>
+                <p id="moves"></p>
+                <input id="okBtn" type="button" onclick="toggleVisablity('Message-Container')" value="¡Genial!" />
+            </div>
+        </div>
+
+        <div id="menu">
+            <div class="custom-select">
+                <select id="diffSelect">
+                    <option value="10">Fácil</option>
+                    <option value="15">Medio</option>
+                    <option value="25">Difícil</option>
+                    <option value="38">Extremo</option>
+                </select>
+            </div>
+            <input id="startMazeBtn" type="button" onclick="makeMaze()" value="Iniciar" />
+        </div>
+        <div id="view">
+            <div id="mazeContainer">
+                <canvas id="mazeCanvas" class="border" height="1100" width="1100"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script type="text/javascript" src="../../JS/Minigames/gato-laberinto/globalFuncs.js"></script>
+    <script type="text/javascript" src="../../JS/Minigames/gato-laberinto/mazeFactory.js"></script>
+    <script type="text/javascript" src="../../JS/Minigames/gato-laberinto/drawMaze.js"></script>
+    <script type="text/javascript" src="../../JS/Minigames/gato-laberinto/player.js"></script>
+    <script type="text/javascript" src="../../JS/Minigames/gato-laberinto/index.js"></script>
+   
+    <div id="touch-controls" aria-hidden="true">
+        <button class="tc-btn" id="tc-up" data-key="38">↑</button>
+        <button class="tc-btn" id="tc-left" data-key="37">←</button>
+        <button class="tc-btn" id="tc-down" data-key="40">↓</button>
+        <button class="tc-btn" id="tc-right" data-key="39">→</button>
+    </div>
+
+  <script src="../../JS/common/fab.js"></script>
+</body>
+
+</html>

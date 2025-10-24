@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Archivos - Serenity Zero</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #8c52ff 0%, #949dc8 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      color: #333;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      color: white;
+    }
+    .header h1 {
+      font-size: 3em;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    .header p {
+      font-size: 1.2em;
+      margin: 10px 0 0;
+      opacity: 0.9;
+    }
+    .files-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .file-item {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .file-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .file-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      display: block;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      padding: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .file-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .file-title {
+      font-size: 1.5em;
+      margin: 0 0 10px;
+      color: #333;
+    }
+    .file-description {
+      font-size: 1em;
+      color: #666;
+      margin: 0 0 20px;
+      line-height: 1.5;
+    }
+    .file-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #8c52ff, #949dc8);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .file-link:hover {
+      background: linear-gradient(45deg, #7a4ae6, #848db7);
+    }
+
+    .serenity-card {
+      background: linear-gradient(45deg, #8c52ff, #949dc8, #8796db, #c0aadd, #cdc1dd, #bcabd1);
+      background-size: 400% 400%;
+      animation: gradientShift 4s ease infinite;
+      transform: scale(1.05);
+      font-size: 1.1em;
+      border: 4px solid #fff;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      color: #fff;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .serenity-card .file-icon {
+      width: 100px;
+      height: 100px;
+      padding: 20px;
+    }
+
+    .serenity-card .file-title {
+      font-size: 1.8em;
+      color: #fff;
+    }
+
+    .serenity-card .file-description {
+      color: #fff;
+      opacity: 0.9;
+    }
+
+    .serenity-card .file-link {
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+    }
+
+    .serenity-card .file-link:hover {
+      background: rgba(255, 255, 255, 1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📁 Archivos</h1>
+      <p>Explora nuestros recursos y secciones disponibles</p>
+    </div>
+
+    <div class="files-grid">
+      <div class="file-item">
+        <div class="file-icon">
+          <img src="../assets/img/Select/Iconos/informacion.png" alt="Mind">
+        </div>
+        <h2 class="file-title">Mind</h2>
+        <p class="file-description">Una organización sin fines de lucro con vasta información, guías y recursos sobre salud mental. (Reino Unido)</p>
+        <a href="https://www.mind.org.uk" target="_blank" class="file-link">Visitar Mind</a>
+      </div>
+
+      <div class="file-item">
+        <div class="file-icon">
+          <img src="../assets/img/Select/Iconos/informacion.png" alt="HelpGuide.org">
+        </div>
+        <h2 class="file-title">HelpGuide.org</h2>
+        <p class="file-description">Recursos gratuitos, artículos con base en evidencia sobre ansiedad, depresión, autoestima, manejo del estrés, etc.</p>
+        <a href="https://www.helpguide.org" target="_blank" class="file-link">Visitar HelpGuide.org</a>
+      </div>
+
+      <div class="file-item">
+        <div class="file-icon">
+          <img src="../assets/img/Select/Iconos/informacion.png" alt="Talkspace">
+        </div>
+        <h2 class="file-title">Talkspace</h2>
+        <p class="file-description">Plataforma de terapia en línea que conecta con terapeutas licenciados vía mensajes, video, etc.</p>
+        <a href="https://www.talkspace.com" target="_blank" class="file-link">Visitar Talkspace</a>
+      </div>
+
+      <div class="file-item">
+        <div class="file-icon">
+          <img src="../assets/img/Select/Iconos/informacion.png" alt="TherapyRoute">
+        </div>
+        <h2 class="file-title">TherapyRoute</h2>
+        <p class="file-description">Un directorio para encontrar psicólogos, consejeros y terapeutas en Colombia o que ofrezcan servicios online. (Colombia / Latinoamérica)</p>
+        <a href="https://www.therapyroute.com/therapists/colombia/1" target="_blank" class="file-link">Visitar TherapyRoute</a>
+      </div>
+
+      <div class="file-item serenity-card">
+        <div class="file-icon">
+          <img src="../assets/img/Select/Iconos/informacion.png" alt="Historia">
+        </div>
+        <h2 class="file-title">Historia</h2>
+        <p class="file-description">Descubre la historia de la psicología dividida en niveles progresivos.</p>
+        <a href="Historia.html" class="file-link">Leer Historia</a>
+      </div>
+
+      <div class="file-item">
+        <div class="file-icon">
+          <img src="../assets/img/Select/Iconos/informacion.png" alt="International Therapist Directory">
+        </div>
+        <h2 class="file-title">International Therapist Directory</h2>
+        <p class="file-description">Un servicio global para encontrar terapeutas en diversos países, presencial u online.</p>
+        <a href="https://internationaltherapistdirectory.com" target="_blank" class="file-link">Visitar International Therapist Directory</a>
+      </div>
+
+      <div class="file-item">
+        <div class="file-icon">
+          <img src="../assets/img/Select/Iconos/informacion.png" alt="Postpartum Support International">
+        </div>
+        <h2 class="file-title">Postpartum Support International (PSI)</h2>
+        <p class="file-description">Especializado en dar apoyo emocional y psicológico a personas con depresión postparto, ansiedad perinatal, etc.</p>
+        <a href="https://postpartum.net" target="_blank" class="file-link">Visitar PSI</a>
+      </div>
+
+      <div class="file-item">
+        <div class="file-icon">
+          <img src="../assets/img/Select/Iconos/informacion.png" alt="MentalZon">
+        </div>
+        <h2 class="file-title">MentalZon</h2>
+        <p class="file-description">Plataforma para encontrar psicólogos, consejeros y terapia en línea dentro de Colombia.</p>
+        <a href="https://mentalzon.com/en/country/Colombia" target="_blank" class="file-link">Visitar MentalZon</a>
+      </div>
+
+      <div class="file-item">
+        <div class="file-icon">
+          <img src="../assets/img/Select/Iconos/informacion.png" alt="United for Global Mental Health">
+        </div>
+        <h2 class="file-title">United for Global Mental Health</h2>
+        <p class="file-description">Recopila recursos globales de apoyo psicológico, líneas de ayuda y guías para buscar asistencia.</p>
+        <a href="https://unitedgmh.org/support" target="_blank" class="file-link">Visitar United for Global Mental Health</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../JS/common/fab.js"></script>
+</body>
+</html>

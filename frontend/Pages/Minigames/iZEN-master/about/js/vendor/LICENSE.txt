@@ -1,0 +1,64 @@
+Proyecto SERENITY 
+
+Información General
+
+Este proyecto web denominado SERENITY ha sido creado, desarrollado y estructurado por Samuel Navarrete Ortiz, actuando bajo el alias profesional “Programador Web IFROS_GAm”, en el marco del cumplimiento de los requerimientos presentados al grupo de la Media Técnica en Desarrollo de Software.
+
+El presente documento certifica la entrega de la primera fase, correspondiente al 70% del proyecto terminado, realizada el día 23 de septiembre del año 2025, con destino al grupo académico mencionado, quien funge como receptor, evaluador y beneficiario del producto digital.
+
+La página web fue construida íntegramente desde cero, partiendo de la premisa de que los medios y recursos anteriores utilizados por el equipo presentaban las siguientes falencias:
+
+- Código mal estructurado y con errores graves de sintaxis.
+- Una distribución de carpetas y archivos desorganizada, que generaba complicaciones de mantenimiento.
+- Implementación deficiente y no optimizada de Node.js, lo cual comprometía el rendimiento y la estabilidad del servicio web.
+
+Por tales motivos, y tras el análisis conjunto, se tomó la decisión de realizar una reconstrucción completa del proyecto, respetando las características solicitadas por el cliente, pero permitiendo ciertas libertades creativas menores con el fin de garantizar un sistema más eficiente, rápido y volátil en su uso y ejecución.
+
+El desarrollo contempla dos fases:
+
+- Fase 1 (70%): Entregada el 23 de septiembre de 2025, con un valor pactado de 150.000 COP.
+- Fase 2 (100%): Corresponderá a la implementación completa de todas las funcionalidades, con un valor pactado de 170.000 COP, a ser entregada en un plazo máximo de dos semanas posteriores a la culminación de la primera fase.
+
+Todo lo anterior quedará consignado en un documento adicional (subyacente) firmado tanto por el líder del grupo receptor como por Samuel/IFROS, en calidad de responsable del proyecto y visionador del diseño estructural.
+
+---
+
+## Licencia Académica y Marco Jurídico  
+
+El presente proyecto se encuentra regulado bajo una **Licencia Académica de Uso Restringido**, sustentada en los siguientes principios y referencias normativas:  
+
+1. **Propiedad Intelectual**  
+   Conforme a lo dispuesto en la **Ley 23 de 1982 (Colombia), sobre Derechos de Autor**, y en concordancia con el **Convenio de Berna para la Protección de las Obras Literarias y Artísticas (art. 2, 1971)**, este proyecto constituye una obra protegida por derechos de autor, siendo su creador y titular **Samuel Navarrete Ortiz (alias IFROS_GAm)**.  
+
+2. **Uso Exclusivamente Académico**  
+   De acuerdo con el **Artículo 13 de la Ley 44 de 1993**, se autoriza el uso de esta obra únicamente para **fines pedagógicos, académicos y de formación técnica**, quedando prohibido su uso con fines de explotación comercial, distribución masiva o monetización.  
+
+3. **Prohibición de Comercialización**  
+   Basado en lo establecido en el **Código de Comercio Colombiano, Artículo 20, numeral 5**, el cual regula actos mercantiles y transacciones comerciales, se determina que el presente proyecto **no podrá ser objeto de actos de comercio**, salvo autorización expresa y formal de su autor.  
+
+4. **Limitación de Responsabilidad**  
+   En concordancia con el **Artículo 16 del Código Civil Colombiano**, el autor queda exento de responsabilidad por daños derivados de un uso indebido, alteraciones no autorizadas o aplicaciones fuera del contexto académico original del software.  
+
+5. **Prohibición de Sublicencia**  
+   Conforme a la doctrina del **Artículo 1832 del Código Civil** sobre contratos y cesión de derechos, queda terminantemente prohibida la cesión, sublicenciamiento o transferencia de los derechos de uso del presente proyecto a terceros no autorizados.  
+
+6. **Reconocimiento de Autoría**  
+   Según lo indicado en la **Ley 23 de 1982, Artículo 30**, el reconocimiento de la autoría es irrenunciable e intransferible. En toda presentación o entrega académica deberá ser con la conciencia de un trabajo de autoria externa:   
+
+7. **Duración de la Licencia**  
+   En conformidad con el **Artículo 8 de la Decisión Andina 351 de 1993 (Comunidad Andina)**, esta licencia de uso será válida únicamente durante la vigencia del presente ciclo académico escolar, careciendo de valor jurídico posterior a dicho periodo.  
+
+8. **Protección frente a reproducción indebida**  
+   De acuerdo con el **Artículo 270 del Código Penal Colombiano**, se considerará un delito la reproducción, plagio o comercialización no autorizada de este software.  
+
+---
+
+## Consideraciones Finales  
+
+Este documento se constituye como **anexo jurídico y académico** del proyecto SERENITY. Se deja constancia de que el uso del presente desarrollo está limitado a los fines formativos, evaluativos y escolares para los cuales fue encargado.  
+
+El incumplimiento de las cláusulas aquí establecidas podrá dar lugar a sanciones de tipo académico e incluso legal, en caso de comprobarse la vulneración de derechos de autor o de propiedad intelectual.  
+
+---
+
+*“Proyecto SERENITY creado por Samuel Navarrete Ortiz (alias IFROS_GAm), para fines académicos en la Media Técnica en Desarrollo de Software – 2025”*. 

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Perfil de Usuario</title>
+  <meta name="description" content="Perfil de usuario en tonos pastel morado/rosa con distribución creativa y animaciones." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../CSS/Perfiles/Perfil-privado/perfilUsuario.css" />
+</head>
+<body>
+  <div class="bg-scene" aria-hidden="true">
+    <span class="bubble" style="--i:0; --x:6%"></span>
+    <span class="bubble" style="--i:1; --x:16%"></span>
+    <span class="bubble" style="--i:2; --x:28%"></span>
+    <span class="bubble" style="--i:3; --x:40%"></span>
+    <span class="bubble" style="--i:4; --x:52%"></span>
+    <span class="bubble" style="--i:5; --x:64%"></span>
+    <span class="bubble" style="--i:6; --x:74%"></span>
+    <span class="bubble" style="--i:7; --x:82%"></span>
+    <span class="bubble" style="--i:8; --x:90%"></span>
+    <span class="bubble" style="--i:9; --x:12%"></span>
+    <span class="bubble" style="--i:10; --x:34%"></span>
+    <span class="bubble" style="--i:11; --x:58%"></span>
+    <span class="fish" style="--row:20%; --delay:0s; --speed:18s"></span>
+    <span class="fish" style="--row:38%; --delay:2s; --speed:22s"></span>
+    <span class="fish" style="--row:56%; --delay:1s; --speed:20s"></span>
+    <span class="fish" style="--row:72%; --delay:3s; --speed:24s"></span>
+    <div class="seaweed">
+      <span class="weed" style="--x:6%"></span>
+      <span class="weed" style="--x:12%"></span>
+      <span class="weed" style="--x:18%"></span>
+      <span class="weed" style="--x:26%"></span>
+      <span class="weed" style="--x:34%"></span>
+      <span class="weed" style="--x:48%"></span>
+      <span class="weed" style="--x:62%"></span>
+      <span class="weed" style="--x:74%"></span>
+      <span class="weed" style="--x:86%"></span>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="card" aria-labelledby="titulo">
+      <h1 id="titulo">Perfil</h1>
+
+      <div class="card-grid">
+        <div class="col-left">
+          <div class="avatar-stack">
+            <span class="shape a" aria-hidden="true"></span>
+            <span class="shape b" aria-hidden="true"></span>
+            <img
+              id="avatarPreview"
+              class="avatar xl"
+              src="https://api.dicebear.com/7.x/thumbs/svg?seed=Perfil&backgroundColor=b6a6f2,ffc6d9&shapeColor=ffffff"
+              alt="Imagen de perfil" />
+          </div>
+
+          <div class="field file-field">
+            <label for="avatarInput">Imagen de perfil</label>
+            <div class="file-select">
+              <label class="btn-upload" for="avatarInput" id="btnUpload">Elegir imagen</label>
+              <span class="file-name" id="fileName">Ningún archivo seleccionado</span>
+              <input id="avatarInput" type="file" accept="image/*" />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-right">
+          <div class="grid-2">
+            <div class="field animate-in">
+              <label for="username">Nombre de usuario</label>
+              <input id="username" type="text" placeholder="Tu nombre de usuario" />
+            </div>
+            <div class="field animate-in" style="--d:.06s">
+              <label for="email">Correo electrónico</label>
+              <input id="email" type="email" placeholder="tucorreo@ejemplo.com" />
+            </div>
+          </div>
+
+          <div class="field animate-in" style="--d:.12s">
+            <label for="password">Contraseña</label>
+            <input id="password" type="password" placeholder="••••••••" />
+          </div>
+
+          <div class="field animate-in" style="--d:.18s">
+            <label for="about">Sobre mí</label>
+            <textarea id="about" rows="6" placeholder="Cuéntanos algo sobre ti"></textarea>
+          </div>
+
+          <div class="field animate-in" style="--d:.24s">
+            <button type="button" id="logoutBtn" class="button" style="background: #ff4757; border: none; color: white; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Cerrar Sesión</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js" defer></script>
+  <script src="../../JS/common/fab.js"></script>
+</body>
+</html>

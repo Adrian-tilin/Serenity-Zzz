@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora");
+
+body {
+  background-image: url("https://i.pinimg.com/736x/4a/b8/3a/4ab83a46f224e2e9ce063b861a701373.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  background-color: rgba(40, 10, 65, 0.65);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.container {
+  margin: auto;
+  width: 845px;  
+  height: 1027px; 
+  position: relative;
+}
+
+
+.welcome {
+  background: rgba(233, 228, 242, 0.95);
+  width: 845px;
+  height: 540px;
+  position: absolute;
+  top: 22%;
+  border-radius: 15px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+
+.pinkbox {
+  position: absolute;
+  top: -10%;
+  left: 5%;
+  background: linear-gradient(160deg, #c4a8f5, #e7d2f9);
+  width: 416px;
+  height: 650px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease-in-out;
+  z-index: 2;
+}
+
+.nodisplay {
+  display: none;
+  transition: all 0.5s ease;
+}
+
+.leftbox,
+.rightbox {
+  position: absolute;
+  width: 50%;
+  transition: 1s all ease;
+}
+
+.leftbox { left: -2%; }
+.rightbox { right: -2%; }
+
+
+h1 {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  margin-top: 120px;
+  text-transform: uppercase;
+  color: #4b1f6d;
+  font-size: 2.6em; 
+  letter-spacing: 10px;
+}
+
+.title {
+  font-family: "Lora", serif;
+  color: #4b1f6d;
+  font-size: 2.3em; 
+  line-height: 1.2em;
+  letter-spacing: 4px;
+  text-align: center;
+  font-weight: 400;
+  margin-top: 20%;
+}
+
+.desc { margin-top: -8px; }
+
+.account {
+  margin-top: 45%;
+  font-size: 13px; 
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9em; 
+  letter-spacing: 2.5px;
+  color: #5d3370;
+  text-align: center;
+}
+
+span { color: #9f75d5; }
+
+
+.flower {
+  position: absolute;
+  width: 156px;
+  height: 156px;
+  top: 46%;
+  left: 29%;
+  opacity: 0.65;
+}
+
+.smaller {
+  width: 117px;
+  height: 130px;
+  top: 48%;
+  left: 38%;
+  opacity: 0.85;
+}
+
+
+button {
+  padding: 20px 26px;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3.5px;
+  font-size: 18px;
+  border-radius: 12px;
+  margin: auto;
+  outline: none;
+  display: block;
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(135deg, #b689f0, #8c59d9);
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+}
+button:hover {
+  background: linear-gradient(135deg, #8c59d9, #b689f0);
+  transform: scale(1.05);
+}
+
+.button {
+  margin-top: 3%;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 7px;
+}
+
+.more-padding { padding-top: 45px; }
+.more-padding input { padding: 16px; }
+.more-padding .submit { margin-top: 55px; }
+
+.submit {
+  margin-top: 30px;
+  padding: 20px 26px;
+  border: none;
+  background: linear-gradient(135deg, #a97aff, #c7a3f5);
+  color: #fff;
+  border-radius: 12px;
+}
+.submit:hover {
+  background: linear-gradient(135deg, #c7a3f5, #a97aff);
+  transform: scale(1.05);
+}
+
+
+input {
+  background: rgba(191, 158, 232, 0.85);
+  width: 75%;
+  color: #fff;
+  border: none;
+  border-bottom: 2px solid rgba(225, 218, 235, 0.7);
+  padding: 12px;
+  margin: 10px;
+  font-size: 1.1em;
+  border-radius: 8px;
+}
+input::placeholder {
+  color: #e5dbf7;
+  letter-spacing: 2px;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+input:focus {
+  color: #fff;
+  outline: none;
+  border-bottom: 2px solid #a97aff;
+  background: rgba(169, 122, 255, 0.85);
+  transition: 0.5s all ease;
+}
+input:focus::placeholder { opacity: 0; }
+
+label {
+  font-family: "Open Sans", sans-serif;
+  color: #5d3370;
+  font-size: 1em;
+  letter-spacing: 1.2px;
+}
+
+
+.checkbox {
+  display: inline;
+  white-space: nowrap;
+  position: relative;
+  left: -70px;
+  top: 6px;
+}
+input[type=checkbox] {
+  width: 14px;
+  height: 14px;
+  accent-color: #a97aff;
+}
+.checkbox input[type=checkbox]:checked + label {
+  color: #4b1f6d;
+  transition: 0.5s all ease;
+}
