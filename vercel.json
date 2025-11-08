@@ -11,11 +11,5 @@
       "src": "/(.*)",
       "dest": "backend/main.py"
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/backend/main.py"
-    }
   ]
 }
