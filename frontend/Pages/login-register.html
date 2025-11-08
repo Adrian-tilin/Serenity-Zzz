@@ -1,58 +1,95 @@
 <!DOCTYPE html>
-<html lang="es" >
+<html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Serenity | Formulario de Registro</title>
   <link rel="stylesheet" href="../CSS/login/principal-login.css">
-<script src="https://public.codepenassets.com/js/prefixfree-1.0.7.min.js"></script>
-
 </head>
 <body>
 
 <div class="container">
   <div class="welcome">
     <div class="pinkbox">
+      <!-- REGISTRO -->
       <div class="signup nodisplay">
-        <h1>registrarse</h1>
+        <h1>REGISTRARSE</h1>
         <form id="registerForm" autocomplete="off">
-          <input type="text" name="username" placeholder="nombre de usuario" required>
-          <input type="email" name="email" placeholder="correo electrónico" required>
-          <input type="password" name="password" placeholder="contraseña" required>
-          <input type="password" name="confirmPassword" placeholder="confirmar contraseña" required>
-          <button type="submit" class="button submit">crear cuenta </button>
+          <input 
+            type="text" 
+            name="username" 
+            placeholder="Nombre de usuario" 
+            required 
+            minlength="3"
+            maxlength="50">
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Correo electrónico" 
+            required>
+          <input 
+            type="password" 
+            name="password" 
+            placeholder="Contraseña" 
+            required 
+            minlength="6">
+          <input 
+            type="password" 
+            name="confirmPassword" 
+            placeholder="Confirmar contraseña" 
+            required 
+            minlength="6">
+          <button type="submit" class="button submit">CREAR CUENTA</button>
         </form>
       </div>
-      <div class="signin">
-        <h1>iniciar sesión</h1>
-        <form id="loginForm" class="more-padding" autocomplete="off">
-          <input type="text" name="username" placeholder="nombre de usuario" required>
-          <input type="password" name="password" placeholder="contraseña" required>
 
-          <button type="submit" class="button submit">iniciar sesión</button>
+      <!-- LOGIN -->
+      <div class="signin">
+        <h1>INICIAR SESIÓN</h1>
+        <form id="loginForm" class="more-padding" autocomplete="off">
+          <input 
+            type="text" 
+            name="username" 
+            placeholder="Nombre de usuario o email" 
+            required>
+          <input 
+            type="password" 
+            name="password" 
+            placeholder="Contraseña" 
+            required>
+          <button type="submit" class="button submit">INICIAR SESIÓN</button>
         </form>
       </div>
     </div>
+
+    <!-- CAJA IZQUIERDA (Login) -->
     <div class="leftbox">
       <h2 class="title"><span>SER</span>ENITY</h2>
       <p class="desc">La puerta a nuevos<span> conocimientos</span></p>
-      <img class="flower smaller" src="../assets/img/Registro/Delfin.png" alt="1357d638624297b" border="0">
-      <p class="account">¿tienes una cuenta?</p>
-      <button class="button" id="signin">iniciar sesión</button>
+      <img class="flower smaller" src="../assets/img/Registro/Delfin.png" alt="Delfín Serenity">
+      <p class="account">¿Tienes una cuenta?</p>
+      <button class="button" id="signin">INICIAR SESIÓN</button>
     </div>
+
+    <!-- CAJA DERECHA (Registro) -->
     <div class="rightbox">
       <h2 class="title"><span>SER</span>ENITY</h2>
-      <p class="desc"> Elige una <span>mente</span> sana</p>
-      <img class="flower" src="../assets/img/Registro/Globo.png"/>
-      <p class="account">¿no tienes una cuenta?</p>
-      <button class="button" id="signup">registrarse</button>
+      <p class="desc">Elige una <span>mente</span> sana</p>
+      <img class="flower" src="../assets/img/Registro/Globo.png" alt="Globo Serenity">
+      <p class="account">¿No tienes una cuenta?</p>
+      <button class="button" id="signup">REGISTRARSE</button>
     </div>
   </div>
- </div>
-
 </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="../JS/Login/Login-interface.js"></script>
+
+<!-- jQuery -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+<!-- Script de login/registro -->
+<script src="../JS/Login/Login-interface.js"></script>
 
 <!-- FAB menu (auto-oculto en inicio) -->
-  <script src="../JS/common/fab.js"></script>
+<script src="../JS/common/fab.js"></script>
+
 </body>
 </html>

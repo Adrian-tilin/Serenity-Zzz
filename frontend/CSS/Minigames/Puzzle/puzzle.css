@@ -2,11 +2,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: #282829;
+    background-color: #949dc8; 
+
 }
 
 #title {
-    width: min(90vw, 400px);
-    height: auto;
+    width: min(50vw, 100px);
+    height: 10;
     display: block;
     margin: 16px auto;
 }
@@ -17,7 +19,7 @@ body {
     max-width: 600px;
     max-height: 600px;
     background-color: rgb(117, 122, 128);
-    border: 10px solid #303131;
+    border: 10px solid #f5f6f7;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -27,10 +29,17 @@ body {
     box-sizing: border-box;
     width: 33.3333%;
     height: 33.3333%;
-    border: 1px solid #202020;
+    border: 1px solid #f5f6f7;
     display: block;
     object-fit: cover;
     touch-action: none;
     user-select: none;
     -webkit-user-select: none;
+}
+.text1{
+
+    color: #f5f6f7;
+}
+.text2{
+    color : #f5f6f7
 }

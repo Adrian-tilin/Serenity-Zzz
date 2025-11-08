@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #224941 url('./img/bg.jpg') no-repeat center center/cover;
+  background: #949dc8 url('./img/bg.jpg') no-repeat center center/cover;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
@@ -43,7 +43,7 @@ select#difficulty {
 }
 
 .circle {
-  background-color: #010f1c;
+  background-color: #8796db;
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -55,12 +55,12 @@ select#difficulty {
 
 .gradient-circle {
   background: conic-gradient(
-    #55b7a4 0%,
-    #4ca493 40%,
+    #cdc1dd 0%,
+    #cdc1dd 40%,
     #fff 40%,
     #fff 60%,
-    #336d62 60%,
-    #2a5b52 100%
+    #c0aadd 60%,
+    #c0aadd 100%
   );
   height: 320px;
   width: 320px;
@@ -110,7 +110,7 @@ select#difficulty {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #3d9988;
+  color: #fff;
   padding: 14px 20px;
   border-radius: 14px;
   font-size: 20px;
